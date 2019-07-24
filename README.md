@@ -50,7 +50,7 @@ class ResultSealed {
         'If you got here, probably you forgot to regenerate the classes? Try running flutter packages pub run build_runner build');
   }
 }
-```dart
+```
 
 4) Add with(or extends) to your sealed class, for e.g. class Result extends(with) ResultSealed
 
