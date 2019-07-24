@@ -8,7 +8,7 @@
 ```yaml
 dev_dependencies:
   build_runner: ^1.0.0
-  sealed_generator: 0.0.1
+  sealed_generator: 0.0.2
 ```
 
 2) Mark any class you want with @sealed annotation (meta: ^1.1.7) and add part '<filename>.g.dart' to the header of you file
@@ -19,7 +19,7 @@ import 'package:meta/meta.dart';
 part 'result.g.dart';
 
 @sealed
-class Result<T> with ResultSealed {}
+class Result<T> with SealedResult<T> {}
 
 class Success<T> extends Result<T> {
   T value;
@@ -34,18 +34,17 @@ flutter packages pub run build_runner build
 Generator will create a class OriginalClassNameSealed for you to use 
 
 ```dart
-class ResultSealed {
+class SealedResult<T> {
   R when<R>(
-    R Function(Success) success,
-    R Function(Failure) failure
+    R Function(Success<T>) success,
+    R Function(Failure<T>) failure,
   ) {
-    if (this is Success) {
-      return success(this as Success);
+    if (this is Success<T>) {
+      return success(this as Success<T>);
     }
-    if (this is Failure) {
-      return failure(this as Failure);
+    if (this is Failure<T>) {
+      return failure(this as Failure<T>);
     }
- 
     throw new Exception(
         'If you got here, probably you forgot to regenerate the classes? Try running flutter packages pub run build_runner build');
   }
