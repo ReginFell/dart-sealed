@@ -31,7 +31,7 @@ class Success<T> extends Result<T> {
 ```bash
 flutter packages pub run build_runner build
 ```
-Generator will create a class OriginalClassNameSealed for you to use 
+Generator will create a class SealedOriginalClassName for you to use 
 
 ```dart
 class SealedResult<T> {
