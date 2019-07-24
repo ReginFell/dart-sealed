@@ -37,7 +37,7 @@ Generator will create a class OriginalClassNameSealed for you to use
 
 # Using #
 
-Just create an instance of you sealed class and call when on instance, for example: 
+Just create an instance of you sealed class and call when on it, for example: 
 
 ```dart
   var resultWidget = Success("hello from success").when(
@@ -48,3 +48,5 @@ Just create an instance of you sealed class and call when on instance, for examp
 ```
 
 And that's it, you are ready to use sealed classses with some sort of when 
+
+It is a very early version of the library, mostly a proof of concept, so contributions are highly welcomed
