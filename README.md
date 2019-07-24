@@ -31,7 +31,26 @@ class Success<T> extends Result<T> {
 ```bash
 flutter packages pub run build_runner build
 ```
-Generator will create a class OriginalClassNameSealed for you to use
+Generator will create a class OriginalClassNameSealed for you to use with 
+
+```dart
+class ResultSealed {
+  R when<R>(
+    R Function(Success) success,
+    R Function(Failure) failure
+  ) {
+    if (this is Success) {
+      return success(this as Success);
+    }
+    if (this is Failure) {
+      return failure(this as Failure);
+    }
+ 
+    throw new Exception(
+        'If you got here, probably you forgot to regenerate the classes? Try running flutter packages pub run build_runner build');
+  }
+}
+```dart
 
 4) Add with(or extends) to your sealed class, for e.g. class Result extends(with) ResultSealed
 
