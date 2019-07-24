@@ -28,7 +28,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Result result = Idle();
+  Result<String> result = Idle();
 
   void _changeState() {
     setState(() {
@@ -36,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
       if (value == 0) {
         result = Failure();
       } else if (value == 1) {
-        result = Success("Value from success");
+        result = Success<String>("Value from success");
       } else if (value == 2) {
         result = Idle();
       }

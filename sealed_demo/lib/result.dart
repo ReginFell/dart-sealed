@@ -3,7 +3,7 @@ import 'package:meta/meta.dart';
 part 'result.g.dart';
 
 @sealed
-class Result<T> extends ResultSealed {}
+class Result<T> extends SealedResult<T> {}
 
 class Success<T> extends Result<T> {
   T value;
@@ -11,6 +11,6 @@ class Success<T> extends Result<T> {
   Success(this.value);
 }
 
-class Failure extends Result {}
+class Failure<T> extends Result<T> {}
 
-class Idle extends Result {}
+class Idle<T> extends Result<T> {}

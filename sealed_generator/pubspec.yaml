@@ -1,6 +1,6 @@
 name: sealed_generator
 description: Code gen for flutter&#x27;s sealed classes
-version: 0.0.1
+version: 0.0.2
 author: Zabelnykov Serhii <ReginFell@gmail.com>
 homepage: https://github.com/ReginFell/Dart-sealed-codegen
 
