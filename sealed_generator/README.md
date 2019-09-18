@@ -8,7 +8,7 @@
 ```yaml
 dev_dependencies:
   build_runner: ^1.0.0
-  sealed_generator: 0.0.2
+  sealed_generator: 0.0.4
 ```
 
 2) Mark any class you want with @sealed annotation (meta: ^1.1.7) and add part '<filename>.g.dart' to the header of you file
