@@ -21,13 +21,13 @@ class SealedClassGenerator extends Generator {
           buffer.write("class Sealed${sealed.type}{ "),
           if (relationsMap[sealed].isNotEmpty)
             {
-              buffer.write("R when<R>("),
+              buffer.write("R when<R>({"),
               relationsMap[sealed].asMap().forEach((index, child) => {
                     buffer.write(
-                        "R Function(${child.type}) ${ReCase(child.name).camelCase}"),
+                        "@required R Function(${child.type}) ${ReCase(child.name).camelCase}"),
                     if (index < relationsMap[sealed].length) {buffer.write(",")}
                   }),
-              buffer.write(") {"),
+              buffer.write("}) {"),
               relationsMap[sealed].forEach((child) => {
                     buffer.write("if(this is ${child.type}) {"),
                     buffer.write(
