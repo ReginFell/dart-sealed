@@ -7,11 +7,11 @@ part of 'result.dart';
 // **************************************************************************
 
 class SealedResult<T> {
-  R when<R>(
-    R Function(Success<T>) success,
-    R Function(Failure<T>) failure,
-    R Function(Idle<T>) idle,
-  ) {
+  R when<R>({
+    @required R Function(Success<T>) success,
+    @required R Function(Failure<T>) failure,
+    @required R Function(Idle<T>) idle,
+  }) {
     if (this is Success<T>) {
       return success(this as Success<T>);
     }

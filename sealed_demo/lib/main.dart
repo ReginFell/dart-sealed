@@ -45,8 +45,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    var resultWidget = result.when((success) => Text(success.value),
-        (failure) => Text("Failure"), (idle) => Text("idle"));
+    var resultWidget = result.when(
+      success: (event) => Text(event.value),
+      failure: (event) => Text("Failure"),
+      idle: (event) => Text("idle"),
+    );
 
     return Scaffold(
       appBar: AppBar(
