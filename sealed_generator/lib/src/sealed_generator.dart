@@ -11,6 +11,7 @@ class SealedClassGenerator extends Generator {
   @override
   FutureOr<String> generate(LibraryReader library, BuildStep buildStep) {
     var buffer = new StringBuffer();
+    relationsMap.clear();
 
     library.allElements
         .where((element) => element is ClassElement)
