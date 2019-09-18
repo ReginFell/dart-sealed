@@ -31,14 +31,14 @@ class Success<T> extends Result<T> {
 ```bash
 flutter packages pub run build_runner build
 ```
-Generator will create a class SealedOriginalClassName for you to use 
+Generator will create a class OriginalClassNameSealed for you to use 
 
 ```dart
 class SealedResult<T> {
-  R when<R>(
-    R Function(Success<T>) success,
-    R Function(Failure<T>) failure,
-  ) {
+  R when<R>({
+      @required R Function(Success<T>) success,
+      @required R Function(Failure<T>) failure,
+    }) {
     if (this is Success<T>) {
       return success(this as Success<T>);
     }
@@ -58,11 +58,11 @@ class SealedResult<T> {
 Just create an instance of you sealed class and call when on it, for example: 
 
 ```dart
-  var resultWidget = Success("hello from success").when(
-            (success) => Text(success.value),
-            (failure) => Text("Failure"), 
-            (idle) => Text("idle")
-    );
+    var resultWidget = result.when(
+        success: (event) => Text(event.value),
+        failure: (event) => Text("Failure"),
+        idle: (event) => Text("idle"),
+      );
 ```
 
 And that's it, you are ready to use sealed classses with some sort of when 
