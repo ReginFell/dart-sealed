@@ -1,6 +1,6 @@
 name: sealed_generator
-description: Code gen for flutter&#x27;s sealed classes
-version: 0.0.6
+description: Codegeneration library for making 'when' statement for Dart.
+version: 1.0.0
 author: Zabelnykov Serhii <ReginFell@gmail.com>
 homepage: https://github.com/ReginFell/Dart-sealed-codegen
 
@@ -14,7 +14,7 @@ dependencies:
   meta: ^1.1.7
   source_gen: ^0.9.4+3
   recase: ^2.0.1
-  analyzer: '>=0.34.0 <=0.38.2'
+  analyzer: '>=0.34.0 <=0.38.3'
 
 dev_dependencies:
   flutter_test:
