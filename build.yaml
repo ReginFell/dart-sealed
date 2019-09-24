@@ -7,7 +7,7 @@ targets:
 builders:
   sealed_generator:
     target: ":sealed_generator"
-    import: "package:sealed_generator/builder.dart"
+    import: "package:sealed_generator/sealed_generator.dart"
     builder_factories: ["sealedBuilder"]
     build_extensions: {".dart": [".sealed.g.part"]}
     auto_apply: dependents

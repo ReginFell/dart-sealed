@@ -1,6 +1,6 @@
 name: sealed_generator
 description: Codegeneration library for making 'when' statement for Dart.
-version: 1.0.0
+version: 1.0.1
 author: Zabelnykov Serhii <ReginFell@gmail.com>
 homepage: https://github.com/ReginFell/Dart-sealed-codegen
 
